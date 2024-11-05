@@ -1,0 +1,61 @@
+/* navbar.css */
+.custom-navbar {
+    background-color: rgba(255, 255, 255, 0.9);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    animation: fadeInNavbar 0.6s forwards ease-in-out;
+}
+
+.custom-navbar {
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+.custom-navbar.scrolled .fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.custom-navbar.scrolled .fade-out {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.navbar-brand {
+    margin-left: 1rem;
+}
+
+.navbar-brand, 
+.nav-link-custom {
+    color: #222!important;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover,
+.nav-link-custom:hover {
+    color: #ff9900!important; /* Orange accent color on hover */
+}
+
+.nav-link-custom.active {
+    color: #ff9900!important; /* Orange accent color for active link */
+    font-weight: bold;
+}
+
+.nav-link-custom {
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+@keyframes fadeInNavbar {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

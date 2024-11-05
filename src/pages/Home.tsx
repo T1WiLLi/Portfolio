@@ -6,7 +6,6 @@ import MainView from "../view/MainView";
 
 function Home() {
     const [showMainContent, setShowMainContent] = useState(false);
-
     const handleLeave = () => {
         setShowMainContent(true);
     };

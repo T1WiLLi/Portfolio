@@ -39,7 +39,7 @@ function NameSection({ onLeave }: NameSectionProps) {
                 <Col>
                     <h1 className="display-3 fw-bold">William Beaudin</h1>
                     <TypingEffect
-                        text={['Java Developer', 'React-Typescript Developer', 'Student']}
+                        text={['Spring-boot Developer', 'React-Typescript Developer', 'Student']}
                         speed={100}
                         eraseSpeed={60}
                         typingDelay={250}

@@ -1,34 +1,20 @@
 // CustomNavbar.js
-import { useState } from "react";
-import { Container, Nav } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Nav, Navbar, Container } from "react-bootstrap";
+import "../styles/components/navbar.css";
 
-function Navbar() {
-    const [hovered, setHovered] = useState<number | null>(null);
-
-    const navItems = [
-        { label: "Projects", to: "/projects" },
-        { label: "About", to: "/about" },
-        { label: "Contact Me", to: "/contact" },
-    ];
-
+function NavbarComponent() {
     return (
-        <Container fluid className="custom-navbar position-fixed top-0 start-0 d-flex align-items-center px-4">
-            <Nav className="ms-auto">
-                {navItems.map((item, index) => (
-                    <Link
-                        key={index}
-                        to={item.to}
-                        className={`nav-item ${hovered === index ? "hovered" : ""}`}
-                        onMouseEnter={() => setHovered(index)}
-                        onMouseLeave={() => setHovered(null)}
-                    >
-                        {item.label}
-                    </Link>
-                ))}
-            </Nav>
-        </Container>
+        <Navbar expand="md" variant="dark" className="custom-navbar">
+            <Container fluid>
+                <Navbar.Brand href="#home">Home</Navbar.Brand>
+                <Nav className="ml-auto">
+                    <Nav.Link href="#projects" className="nav-link-custom">Projects</Nav.Link>
+                    <Nav.Link href="#about" className="nav-link-custom">About</Nav.Link>
+                    <Nav.Link href="#contact" className="nav-link-custom">Contact Me</Nav.Link>
+                </Nav>
+            </Container>
+        </Navbar>
     );
 }
 
-export default Navbar;
+export default NavbarComponent;
